@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAprovador", "AppAprovador.csproj", "{0156AA6A-3404-4F3D-8960-1F926B566680}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0156AA6A-3404-4F3D-8960-1F926B566680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0156AA6A-3404-4F3D-8960-1F926B566680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0156AA6A-3404-4F3D-8960-1F926B566680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0156AA6A-3404-4F3D-8960-1F926B566680}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {346DC4EB-E3A1-4C36-9E5C-9AA91398E801}
+	EndGlobalSection
+EndGlobal
