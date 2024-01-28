@@ -1,10 +1,43 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "MVA";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">App Provador</h1>
+    <p>Aplicativo para aprovação de vendas</a>.</p>
+    <p>Verifique abaixo a lista de itens aguardanado a sua aprovação.</a>.</p>
 </div>
+
+
+<table "table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            @*<th scope="col">Imagem</th>*@
+            <th scope="col">Preço</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items.Value)
+        {
+            <tr>
+                <th scope="row">@item.RowKey</th>
+                <td>@item.Nome</td>
+                @*<td> <img src="@item.ImagemURL" /></td>*@
+                <td>R$@item.Preco.Replace(".",",").Substring(0,6)</td>
+                <td>@item.Descricao</td>
+                <td>@item.Status</td>
+                <td>
+                    <button type="button" class="btn btn-success">Aprovar</button>
+                    <button type="button" class="btn btn-danger">Reprovar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
