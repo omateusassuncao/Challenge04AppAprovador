@@ -1,8 +1,8 @@
 ﻿using AppAprovador.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace AppAprovador.Pages
 {
@@ -19,8 +19,6 @@ namespace AppAprovador.Pages
 
         public async Task OnGetAsync()
         {
-
-
             string StorageName = "rgchallenge04aafc";
             string StorageKey = "hWHecAcrdxjGChU4UYkSgZI5soMPP85v0V+sWuXhaHtz+vvDO2fqrPa3xrFv0tbMbm2Cb8SzvIJP+AStlBzcBQ==";
 
@@ -42,5 +40,34 @@ namespace AppAprovador.Pages
             Items = ItemsVendas;
 
         }
+
+        public async Task<IActionResult> OnGetSendMessage(string id)
+        {
+
+            Item item = new Item(id, "Venda Aprovada", "respostas");
+
+            string code = "QCUv2RzXnmA1AKlWmgFzeyIrEZtJUVZ6cjPM88MkpMaeAzFuPjYKjA==";
+            string apiUrl = "https://challenge04vendas.azurewebsites.net/api/HttpTriggerGetData?code={code}";
+
+            var client = new HttpClient();
+            var uri = new Uri(apiUrl.Replace("{code}", code));
+            //client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+
+            var objAsJson = JsonConvert.SerializeObject(item);
+            var content = new StringContent(objAsJson, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri,content);
+
+            if (response.IsSuccessStatusCode) 
+            { 
+                return Page();
+            }
+            else
+            {
+                throw new Exception("Erro ao enviar mensagem: " + response.StatusCode);
+            }
+
+        }
+
     }
 }

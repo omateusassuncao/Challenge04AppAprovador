@@ -7,15 +7,12 @@
 
     public class Item
     {
-        //public Item(int id, string nome, string imagemURL, string preco, string descricao, string status)
-        //{
-        //    Id = id;
-        //    Nome = nome;
-        //    ImagemURL = imagemURL;
-        //    Preco = preco;
-        //    Descricao = descricao;
-        //    Status = status;
-        //}
+        public Item(string rowkey, string status, string partitioney)
+        {
+            RowKey = rowkey;
+            Status = status;
+            PartitionKey = partitioney;
+        }
 
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }

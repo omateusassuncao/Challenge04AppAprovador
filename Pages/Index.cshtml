@@ -34,7 +34,9 @@
                 <td>@item.Descricao</td>
                 <td>@item.Status</td>
                 <td>
-                    <button type="button" class="btn btn-success">Aprovar</button>
+                    <a asp-page-handler="SendMessage" asp-route-id="@item.RowKey">
+                        <button class="btn btn-success">Aprovar</button>
+                    </a>
                     <button type="button" class="btn btn-danger">Reprovar</button>
                 </td>
             </tr>
