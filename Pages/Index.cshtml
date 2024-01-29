@@ -10,8 +10,9 @@
     <p>Verifique abaixo a lista de itens aguardanado a sua aprovação.</a>.</p>
 </div>
 
+<br />
 
-<table "table table-striped">
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -34,10 +35,12 @@
                 <td>@item.Descricao</td>
                 <td>@item.Status</td>
                 <td>
-                    <a asp-page-handler="SendMessage" asp-route-id="@item.RowKey">
+                    <a asp-page-handler="SendMessageAprovar" asp-route-id="@item.RowKey">
                         <button class="btn btn-success">Aprovar</button>
                     </a>
-                    <button type="button" class="btn btn-danger">Reprovar</button>
+                    <a asp-page-handler="SendMessageReprovar" asp-route-id="@item.RowKey">
+                        <button class="btn btn-danger">Reprovar</button>
+                    </a>
                 </td>
             </tr>
         }

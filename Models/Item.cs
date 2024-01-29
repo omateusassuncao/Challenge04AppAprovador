@@ -2,7 +2,7 @@
 {
     public class ListItem
     {
-        public List<Item> Value { get; set; }
+        public List<Item>? Value { get; set; }
     }
 
     public class Item
@@ -17,7 +17,7 @@
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
         public string Nome { get; set; }
-        public string ImagemURL { get; set; }
+        //public string ImagemURL { get; set; }
         public string Preco { get; set; }
         public string Descricao { get; set; }
         public string Status { get; set; }
